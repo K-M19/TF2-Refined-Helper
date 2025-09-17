@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "TF Refined Helper",
+  "version": "1.0.0",
+  "description": "TF Refined Helper is a utility that helps you quickly add (keys, Ref, Rec, Scrap) into the trade window without having to drag each Ref or key manually.",
+  "icons": {
+    "128": "images/icon128.png",
+    "16": "images/icon16.png"
+  },
+  "permissions": [
+    "activeTab",
+    "https://steamcommunity.com/*"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "js/library/jquery-3.1.0.min.js",
+        "js/library/bootstrap.min.js",
+        "js/init.js",
+        "js/backpack.js",
+        "js/outpost.js",
+        "js/profile_page.js",
+        "js/trade_offer.js",
+        "js/content.js"
+      ],
+      "matches": [
+        "*://next.backpack.tf/classifieds*",
+        "*://backpack.tf/classifieds*",
+        "*://steamcommunity.com/tradeoffer/*",
+        "*://steamcommunity.com/*/tradeoffers/sent/*",
+        "*://steamcommunity.com/id/*",
+        "*://steamcommunity.com/profiles/*",
+        "*://steamcommunity.com/inventory/*"
+      ]
+    }
+  ]
+}
