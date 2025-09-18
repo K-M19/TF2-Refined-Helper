@@ -1,5 +1,5 @@
 # TF2 Refined Helper
-* **TF2 Refined Helper**: is a utility that helps you quickly add (keys, Ref, Rec, Scrap) into the trade window without having to drag each Ref or key manually, it also helps you keep track of how many keys or Ref you and the other party have left.
+* **TF2 Refined Helper**: is a utility that helps you quickly add (keys, Ref, Rec, Scrap) into the trade window without having to drag each Ref or keys manually, it also helps you keep track of how many keys or Ref you and the other party have left.
 
 ## 📊 Supported web browsers
 * Supported > Chromium-Core – (Microsoft Edge, Google Chrome, Opera, Brave, Vivaldi, etc.)
