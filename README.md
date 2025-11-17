@@ -3,7 +3,7 @@
 
 ## 📊 Supported web browsers
 * Supported > Chromium-Core – (Microsoft Edge, Google Chrome, Opera, Brave, Vivaldi, etc.)
-* Not supported > Gecko-Core – (Waterfox, LibreWolf, Mozilla Firefox, etc.)
+* Supported > Gecko-Core – (Waterfox, LibreWolf, Mozilla Firefox, etc.)
 
 ## 🔄 Conversion value
 - 1 keys > 1 Keys
@@ -12,7 +12,7 @@
 - 0.11 > 1 Scrap (Scrap Metal)
 
 ## 📦 Download
-- 🔗 [Download](https://github.com/K-M19/TF2-Refined-Helper/archive/refs/heads/main.zip)
+- 🔗 [Download](https://github.com/K-M19/TF2-Refined-Helper/releases)
 
 ## ❓ How to install
 * 1.Open your extensions manager.
