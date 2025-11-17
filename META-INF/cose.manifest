@@ -1,0 +1,67 @@
+Manifest-Version: 1.0
+
+Name: LICENSE
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: RrKZl4bggiGs24eM2Gzrg5rlnPM=
+SHA256-Digest: rtCQ3jI1SJW+N4nqx5Q4nJursvq23W8lSnrW2I1TDuI=
+
+Name: manifest.json
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: 2Uop0Z4Te1pG2kMAEMsLp16QSLk=
+SHA256-Digest: CEvk9cFik7h/AEEK/X9aVt5PE5HTmJA/kPSroAX1z+s=
+
+Name: README.md
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: os9E7oE65oWOpbiPp9MVzmuYHjQ=
+SHA256-Digest: rNIPlmRI8PwpBUktB0K2IfwZ7l5wqBzYqBPjmIFxfPY=
+
+Name: images/icon16.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: rczZMVDr1JkT/i9GKsCsZ4EYy3M=
+SHA256-Digest: RCyDgPF3E+w+6pdEDaHUUEpMLsRg/H+rSxhwqzp/Dvk=
+
+Name: images/icon128.png
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: ffxrxdHeiHuSMGcjluBEMFh/uas=
+SHA256-Digest: 16gFw3LnP0xxN/7rjQq2BV2tVJHkO0lAOydWmHVEdxg=
+
+Name: js/init.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: 4tVT6OGV+cxcRmIuiuWueboQeM8=
+SHA256-Digest: DeZF80NNRTL9XsSTXiZ6L/V10RXaItr2qEGUxYtNaAY=
+
+Name: js/outpost.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: kI3e/gnDOTPqNLljSToaXaU8QSw=
+SHA256-Digest: iA6uKzkRxAoNxflqj8/i+B8lHr/UdyE6cltSHnI5aco=
+
+Name: js/backpack.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: jzjbs4JBj6R9/g1inZrB3TPu/Ho=
+SHA256-Digest: HBotYbSWlwQCvpzMFys9HRo1spaknulgcbyrdPwTXw8=
+
+Name: js/profile.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: lddYj6imWUCQaOwcdArp0G2yhfQ=
+SHA256-Digest: I2C1Iizu6TFlW084faQf1Ei7wZr6LB0lkWJ0Be0b09s=
+
+Name: js/trade_offer.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: Jt8Sx5WNM8jrP+lznhQiF7WXV/w=
+SHA256-Digest: QT1K/Pl6rgjJ+uCPnBj3lvWJr3ZIV3pezD5Dy+i1oyE=
+
+Name: js/content.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: wUpn9M4H5Rf0G0Suh7SuY9daOA8=
+SHA256-Digest: NrYrBtHdt282wo3ghgRvN3A2GgN0sasrdTJOGk3VFkU=
+
+Name: js/library/bootstrap.min.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: FhUbD+IjABJQF7NSFd/ajPl5298=
+SHA256-Digest: JDVfsw5UgFexA9Q1dgQRp4hLvTMdLz0/j8NHh/PCtDk=
+
+Name: js/library/jquery-3.1.0.min.js
+Digest-Algorithms: SHA1 SHA256
+SHA1-Digest: xywXNbTZA9kN1RIl6++4x067xR8=
+SHA256-Digest: cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=
+

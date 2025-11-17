@@ -1,16 +1,12 @@
 {
   "manifest_version": 2,
   "name": "TF Refined Helper",
-  "version": "1.0.0",
+  "version": "1.2.6",
   "description": "is a utility that helps you quickly add (keys, Ref, Rec, Scrap) into the trade window without having to drag each Ref or keys manually, it also helps you keep track of how many keys or Ref you and the other party have left.",
   "icons": {
     "128": "images/icon128.png",
     "16": "images/icon16.png"
   },
-  "permissions": [
-    "activeTab",
-    "https://steamcommunity.com/*"
-  ],
   "content_scripts": [
     {
       "js": [
@@ -19,19 +15,31 @@
         "js/init.js",
         "js/backpack.js",
         "js/outpost.js",
-        "js/profile_page.js",
+        "js/profile.js",
         "js/trade_offer.js",
         "js/content.js"
       ],
       "matches": [
-        "*://next.backpack.tf/classifieds*",
         "*://backpack.tf/classifieds*",
         "*://steamcommunity.com/tradeoffer/*",
-        "*://steamcommunity.com/*/tradeoffers/sent/*",
+        "*://steamcommunity.com/*/tradeoffers/sent/",
         "*://steamcommunity.com/id/*",
-        "*://steamcommunity.com/profiles/*",
-        "*://steamcommunity.com/inventory/*"
+        "*://steamcommunity.com/profiles/*"
       ]
     }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "Butaaa.inbox@gmail.com",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "permissions": [
+    "bookmarks",
+    "<all_urls>"
   ]
 }
