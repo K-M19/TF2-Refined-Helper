@@ -1,5 +1,10 @@
 # TF2 Refined Helper
-* **TF2 Refined Helper**: is a utility that helps you quickly add (keys, Ref, Rec, Scrap) into the trade window without having to drag each Ref or keys manually, it also helps you keep track of how many keys or Ref you and the other party have left.
+* **TF2 Refined Helper**: A utility that quickly adds keys, Ref, Rec, and Scrap to the trade window and tracks the remaining amounts for both you and the other party.
+
+## 📦 Features
+* Track the inventory (keys, Ref, Rec, and Scrap) for you and the other party.
+* Quickly add (keys, Ref, Rec, and Scrap) using only the specified values.
+* Check your and the other party's reputation using quick-access buttons to (Rep.tf, backpack.tf, steamhistory.net) on Steam profiles.
 
 ## 📊 Supported web browsers
 * Supported > Chromium-Core – (Microsoft Edge, Google Chrome, Opera, Brave, Vivaldi, etc.)
@@ -8,7 +13,7 @@
 ## 🔄 Conversion value
 - 1 keys > 1 Keys
 - 1.00 > 1 Ref (Refined Metal)
-- 0.33 > 1 Rec (Reclaimed Metal)
+- 0.33 > 1 Rec (Reclaimed Metal) Or 3x (Scrap Metal)
 - 0.11 > 1 Scrap (Scrap Metal)
 
 ## 📦 Download
