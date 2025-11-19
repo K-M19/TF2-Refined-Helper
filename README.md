@@ -26,13 +26,11 @@
 * 4.Select the path where you saved it.
 
 ### Demo
-* Check Steam profile
+* Check Steam Profile:
 
 <img width="467" height="167" alt="11-25 (583-583-9-8)" src="https://github.com/user-attachments/assets/1c38c1a4-e7b2-4170-b428-796a1c309e08" />
 
-
-
-* Quickly add
+* Quickly add:
   
 ![Demo)](https://github.com/user-attachments/assets/a83166fe-fd7c-4629-9656-940e287686b3)
 
