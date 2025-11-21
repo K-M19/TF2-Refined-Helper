@@ -16,7 +16,7 @@ function content(){
 	}else if(URL.includes("steamcommunity.com/tradeoffer/")){
 		steam_trade_start();
 	}else if(URL.includes("steamcommunity.com/id/") || URL.includes("steamcommunity.com/profiles/")){
-		addRepTF();
+		addButtons();
 	}
 }
 

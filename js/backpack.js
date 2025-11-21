@@ -22,16 +22,16 @@ function BackPack_start(){
 
 		for(var i = 1; i<= l_page_num;i++){
 			//Go to all the other pages and check for halloween spells
-			console.log(document.location.href);
+			//console.log(document.location.href);
 			var new_url = setURLParameter(document.location.href,'page',i);
 			deferreds.push(GrabDOM(0,new_url,[results, i]));
 		}
 
 		$.when.apply($, deferreds).done(function() {
-			console.log(results);
+			//console.log(results);
 			for(var i = 0; i< results.length;i++){
 				var result = results[i];
-				console.log(result);
+				//console.log(result);
 				Backpack_Loop(result);
 			}
             Backpack_complete();
@@ -44,13 +44,13 @@ function BackPack_start(){
 
 //goes over the list and checks for spells. If the item has spells we list them.
 function Backpack_Loop(DOM){
-	console.log(DOM);
+	//console.log(DOM);
 	var item_list = $(DOM).find(columns_bp).first();
-	console.log(item_list.children('li'));
+	//console.log(item_list.children('li'));
 
 	item_list.children('li').each(function(){
 		if(this.innerHTML.includes("data-spell_1")){
-			console.log(this);
+			//console.log(this);
 			//add items with spells
 			var node = $(this).find("div.item");
 			node.attr('data-toggle',"popover");
@@ -58,7 +58,7 @@ function Backpack_Loop(DOM){
 			$(columns_bp).first().append(this.outerHTML);
 
 			//show custom popover
-			console.log(node[0]);
+			//console.log(node[0]);
 			show_popover(node[0]);
 			
 		}
@@ -68,14 +68,14 @@ function Backpack_Loop(DOM){
 //Helper
 function getBpURL(){
 	var l_page_url = $(page_bp).last()[0].href;
-	console.log(l_page_url);
+	//console.log(l_page_url);
 	return l_page_url;
 }
 
 function getBpPageNum(url){
 	var page_parem = "page";
 	var l_page_num = getUrlParam(url, page_parem);
-	console.log(l_page_num);
+	//console.log(l_page_num);
 	if(l_page_num == null){
 		l_page_num = 1;
 	}
@@ -144,22 +144,22 @@ function show_popover(info){
 //Add inventory button and add additional parameters
 function add_inv_param(){
 	var item_list = $(columns_bp).first();
-	console.log(item_list);
+	//console.log(item_list);
 	item_list.children('li').each(function(){
-		console.log(this.id);
+		//console.log(this.id);
 		var item_id = "440_2_"+this.id.split("_")[1];
-		console.log(item_id);
+		//console.log(item_id);
 		//find the inventory url
 		//In order to do that, we use item id and the user profile link to find the item
 		var bp_profile = $(this).find(bp_profile_finder)[0].href;
-		console.log(bp_profile);
+		//console.log(bp_profile);
 		var steam_user_link = defaultSteamURL + bp_profile.replace(/[^0-9]+/, '');
-		console.log(steam_user_link);
+		//console.log(steam_user_link);
 		var steam_link_id = steam_user_link + "/inventory/#" + item_id;
 
 		//Add button under the correct placement
 		var b_placement = $(this).find(placement_bp);
-		console.log(b_placement);
+		//console.log(b_placement);
 		var b_inspect = '<a href="'+steam_link_id+'" \
 						class="btn btn-xs btn-bottom btn-primary" target="_blank"\
 		 				data-original-title="Check in-game"><span>See Inventory</span></a>';
@@ -171,7 +171,7 @@ function add_inv_param(){
 
 	//also have for buy orders
 	item_list = $(columns_bp)[1];
-	console.log(item_list);
+	//console.log(item_list);
 	$(item_list).children('li').each(function(){
 		//Also add key/value to use for steam trade
 		getKeyRefBP(this);
@@ -180,10 +180,10 @@ function add_inv_param(){
 
 //find key and ref from item on backpack.tf classified
 function getKeyRefBP(node){
-	console.log(node);
-	console.log($(node).find("div.item"));
+	//console.log(node);
+	//console.log($(node).find("div.item"));
 	var value = $(node).find("div.item").attr("data-listing_price");
-	console.log(value);
+	//console.log(value);
 	var arr = value.split(',');
 	var key = '', ref = '';
 	for(var i=0; i < arr.length;i++){
@@ -200,7 +200,7 @@ function getKeyRefBP(node){
 //add key/ref value
 function addParamURL(node,key,ref){
 	$(node).find("a[href*='"+seller_bp+"']").each(function(){
-		console.log(this);
+		//console.log(this);
 		var new_url = $(this).attr('href');
 		if(key != ''){
 			new_url = setURLParameter(new_url,"key",key);

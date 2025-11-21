@@ -70,7 +70,7 @@ function steam_trade_start(){
 		}
 
 		function showAmount(user,key,ref,rec,scrap){
-			console.log("does it work?");
+			//console.log("does it work?");
 			clearText(); //clear anything before any sort of message is shown
 			var msg_key = '<div id='+msgDiv+' style="color: white;">' + border + '<strong>' + user + 
 			' Total | Keys: ' + key + ' | Ref: '+ ref + ' | Rec: '+ rec + ' | Scrap: '+ scrap +
@@ -126,8 +126,8 @@ function steam_trade_start(){
 			var ref_obj = $("#"+ref_field);
 			var num = parseInt(ref_obj.val()*10) / 10;
 			var decimal = (num - Math.floor(num)).toFixed(2)*10;
-			console.log("num: " + num);
-			console.log("decimal: " + decimal);
+			//console.log("num: " + num);
+			//console.log("decimal: " + decimal);
 			if(decimal == 9){
 				num = Math.ceil(num);
 			}else{
@@ -141,21 +141,21 @@ function steam_trade_start(){
 		function findAmount(){
 			key_list=[], ref_list=[], rec_list=[], scrap_list=[];
 			var inventory = $("div.inventory_ctn:visible");
-			console.log(inventory);
+			//console.log(inventory);
 			//Get all the necessary items
 			var items = inventory.find("div.itemHolder").filter(function() {
 			    return $(this).css("display") !== "none";
 			}).find("div.item").filter(function() {
 			    return $(this).css("display") !== "none";
 			});
-			console.log(inventory.find(".itemHolder"));
+			//console.log(inventory.find(".itemHolder"));
 			for (var i =0; i < items.length; i++){
 				var item = items[i];
 				var data = item.rgItem;
 				if(jQuery.inArray(data.classid, key_ids) > -1){ //check if the classid matches
-					console.log(item);
-					console.log(data);
-					console.log(jQuery("#")[0].rgItem);
+					//console.log(item);
+					//console.log(data);
+					//console.log(jQuery("#")[0].rgItem);
 					key_list.push(item);
 				}else if(data.classid == ref_id){
 					ref_list.push(item);
@@ -196,10 +196,10 @@ function steam_trade_start(){
 			vref = Math.min(vref,ref_list.length);
 			vrec = Math.min(vrec,rec_list.length);
 			vscrap = Math.min(vscrap,scrap_list.length);
-			console.log("vkey: "+vkey);
-			console.log("vref: "+vref);
-			console.log("vrec: "+vrec);
-			console.log("vscrap: "+vscrap);
+			//console.log("vkey: "+vkey);
+			//console.log("vref: "+vref);
+			//console.log("vrec: "+vrec);
+			//console.log("vscrap: "+vscrap);
 
 			for(var i=0; i<vkey;i++){
 				setTimeout(MoveItemToTrade,i*50,key_list.shift());
@@ -227,15 +227,15 @@ function steam_trade_start(){
 			var invMyTab = "inventory_select_your_inventory",invTheirTab = "inventory_select_their_inventory";
 
 			$("a#"+invMyTab + ",a#" + invTheirTab).click(function(e){
-				console.log("TF2 tab clicked");
-				console.log(e.currentTarget);
-				console.log($(e.currentTarget).attr("id") == invMyTab); 
+				//console.log("TF2 tab clicked");
+				//console.log(e.currentTarget);
+				//console.log($(e.currentTarget).attr("id") == invMyTab); 
 				if($(e.currentTarget).attr("id") == invMyTab){
 					userID = 0;
 				}else if($(e.currentTarget).attr("id") == invTheirTab){
 					userID = 1;
 				}
-				console.log("inventory");
+				//console.log("inventory");
 				doesTF2InvExist(errorCheck);
 			});
 
@@ -244,24 +244,24 @@ function steam_trade_start(){
 
 	
 			$(my_sel+","+ their_sel +","+ clear).click(function(){
-				console.log("clear");
+				//console.log("clear");
 				doesTF2InvExist(errorCheck);
 			});
 
 		
 			$(filter).on('input',function(){
-				console.log("filter");
+				//console.log("filter");
 				doesTF2InvExist(errorCheck);
 			});
 
 	
 			$("div#filter_options").on('change',tag,function(){
-				console.log("checkbox");
+				//console.log("checkbox");
 				doesTF2InvExist(errorCheck);
 			});
 
 			$("div.trade_item_box").click(function(){
-				console.log("clicked item");
+				//console.log("clicked item");
 				setTimeout(findAmount,500);
 			});
 
@@ -277,7 +277,7 @@ function steam_trade_start(){
 				$("#"+TF2extenUI).show();
 				findAmount();
 			}else{
-				console.log("failed to load");
+				//console.log("failed to load");
 				var message = "TF2 Inventory was not found. Please select TF2 as the inventory above OR\
 				 reload the page to try again";
 				showError(message);
@@ -300,8 +300,8 @@ function steam_trade_start(){
 					var id_check = $("div.inventory_ctn:visible").attr('id').indexOf("_440_2");
 					return id_check> -1;
 				}catch(e){
-					console.log($("div.inventory_ctn:visible").attr('id'));
-					console.log(check);
+					//console.log($("div.inventory_ctn:visible").attr('id'));
+					//console.log(check);
 				}
 			
 			},1000,10,callback);

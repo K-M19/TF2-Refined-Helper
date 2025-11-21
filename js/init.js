@@ -9,7 +9,7 @@ function GrabDOM(content_id,URL,arg){
 	  url: URL,
 	  dataType: 'text',
 	  success: function(data) {
-	  	console.log(data);
+	  	//console.log(data);
 	    (arg[0])[arg[1]-1] = data;
 	  },error: function(){
 	  	if(content_id == 0){
@@ -43,12 +43,12 @@ function getUrlParam(url, paramName) {
 //get query of a specific parameter
 function setURLParameter(url,key,value) {
 	var l_url = url.split('&'), query = {}, new_url="";
-	console.log(url_list);
+	//console.log(url_list);
 	for (var i=0; i < l_url.length; i++){
 		if(l_url[i].indexOf('=') !== -1){
 			var param = l_url[i].split('=');
 			query[param[0]] = param[1];
-			console.log(param);
+			//console.log(param);
 		}else if(i !== l_url.length-1){
 			new_url +=str+"&";
 		}
@@ -56,7 +56,7 @@ function setURLParameter(url,key,value) {
 	query[key] = value; //sets new query
 	new_url += $.param(query);
 	new_url = decodeURIComponent(new_url);
-	console.log(new_url);
+	//console.log(new_url);
 	return new_url;
 }
 

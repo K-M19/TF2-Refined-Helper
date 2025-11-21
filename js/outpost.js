@@ -30,7 +30,7 @@ function Outpost_start(){
 		$(item_search_div).prevAll().each(function(){
 			item_ID.push($(this).attr("data-hash").split(',')[1]);
 		});
-		console.log(item_ID);
+		//console.log(item_ID);
 
 		//Find link
 		var link = getoutpostURL();
@@ -39,7 +39,7 @@ function Outpost_start(){
 
 		for(var i = 1; i<=page_num;i++){
 			//Go to all the other pages and check for halloween spells
-			console.log(document.location.href +page_text+ i);
+			//console.log(document.location.href +page_text+ i);
 
 			deferreds.push(GrabDOM(1, link+","+ i,[results, i]));
 		}
@@ -47,7 +47,7 @@ function Outpost_start(){
 		$.when.apply($, deferreds).done(function() {
 			for(var i = results.length-1; i>=0;i--){
 				var result = results[i];
-				console.log(result);
+				//console.log(result);
 				Outpost_Loop(result,item_ID);
 			}
             Outpost_complete();
@@ -61,18 +61,18 @@ function Outpost_start(){
 function Outpost_Loop(DOM,item_ID){
 	var box_list = $(DOM).find(columns_out);
 	var item_list = $(box_list).find(seller_div);
-	console.log(item_list);
-	console.log(item_list.length);
+	//console.log(item_list);
+	//console.log(item_list.length);
 	item_list.each(function(index){
 		var hasHalloween = false;
-		console.log(this);
+		//console.log(this);
 		$(this).find("ul").children('li').each(function(){
-			console.log(this);
+			//console.log(this);
 			var current_item_ID = $(this).attr("data-hash").split(",")[1];
 
 			if($.inArray(current_item_ID,item_ID) > -1){
 				var op_attribute = $(this).attr("data-attributes");
-				console.log(this);
+				//console.log(this);
 				if(op_attribute != null && op_attribute.includes('Halloween Spell:')){
 					hasHalloween = true; //once we find an item with halloween spell, no need to search that post
 					return false; //break out of the loop
@@ -81,7 +81,7 @@ function Outpost_Loop(DOM,item_ID){
 		});
 
 		if(hasHalloween){
-			console.log(this);
+			//console.log(this);
 			$(box_list[index]).insertAfter(op_search_widget);
 		}
 	});
@@ -93,7 +93,7 @@ function getoutpostURL(){
 	var ulist = link.split(",");
 	if(ulist.length > 0){
 		link = ulist[0];
-		console.log(link);
+		//console.log(link);
 	}
 	return link;
 }
@@ -101,7 +101,7 @@ function getoutpostURL(){
 function getoutpostPageNum(){
 	var page_num = $(page_out).length - 2; // - 2 for previous page and next page
 	var page_limit=20;
-	console.log(page_num);
+	//console.log(page_num);
 
 	if(page_num <= 0){
 		page_num = 1;
@@ -127,8 +127,8 @@ function Outpost_complete(){
 function getBPprice(node){
 	var value = 0;
 	value = $(node).find("div.tag.bottom-right>span").html();
-	console.log($(node).find("span.tag.bottom-right"));
-	console.log("value: "+value);
+	//console.log($(node).find("span.tag.bottom-right"));
+	//console.log("value: "+value);
 	if (value == null || value === '') {
 		value = '???';
 	}
@@ -142,15 +142,15 @@ function btn_bp_price(){
 		$(c_btn).text("Loading....");
 		var item_list = $(this).closest("div.row.row-no-gutter").find(seller_div);
 		var deferreds = [],results = [],node = [];
-		console.log(item_list);
+		//console.log(item_list);
 
 		item_list.each(function(){
-			console.log(this);
+			//console.log(this);
 			$(this).find("ul").children('li').each(function(index){
-				console.log(this);
+				//console.log(this);
 				var id = $(this).attr("data-id");
 				var bp_history = "https://backpack.tf/item/" + id;
-				console.log(bp_history);
+				//console.log(bp_history);
 				deferreds.push(GrabDOM(0, bp_history,[results, 1+index]));
 				node.push(this);
 			});
@@ -160,7 +160,7 @@ function btn_bp_price(){
 			for(var i = 0; i < results.length;i++){
 				var result = results[i];
 				var value = getBPprice(result);
-				console.log(value);
+				//console.log(value);
 				$(node[i]).find("a.item-summary").append('<div style="color: red;" class="craft_no">'+value+'</div>');
 				$(c_btn).text("Try Again?");
 			}
@@ -174,7 +174,7 @@ function Outpost_addButton(){
 	//using history instead of attribute as it will also try to run for buying sections
 	$(document).on("DOMNodeInserted",history_tag, function(){
 		var original_id = $(document).find(attribute_tag + " div.col-md-9.summary-white")[1].innerHTML;
-		console.log(original_id);
+		//console.log(original_id);
 		var history_btn = '<a class="btn btn-success" '
 		+'href="https://backpack.tf/item/' + original_id +'">BP HISTORY</a>';
 		$(summary_tag).find("div.summary-padded.summary-light ul.item-links").append(history_btn);
@@ -187,7 +187,7 @@ function Outpost_addButton(){
 	//add get bp prices btn
 	var post = $(columns_out);
 	if(post.length > 0){
-		console.log(post);
+		//console.log(post);
 		var item_list = post.find("ul.trade-tools");
 
 		item_list.each(function(){
