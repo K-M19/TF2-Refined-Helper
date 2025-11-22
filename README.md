@@ -7,11 +7,7 @@
 * Check your and the other party's reputation using quick-access buttons to (Rep.tf, backpack.tf, steamhistory.net) on Steam profiles.
 
 ## 📊 Supported web browsers
-
-> [!WARNING]  
-> Currently, this extension uses Manifest V2, so browsers that require Manifest V3 or higher cannot use it, for example Google Chrome, because it no longer supports inline scripts. However, extensions that use pre-registered scripts are still allowed, such as on Firefox, or browsers that still support Manifest V2 or higher, like Brave, Opera.
-
-* Supported > Chromium-Core – (Microsoft Edge, Opera, Brave, Vivaldi, etc.)
+* Supported > Chromium-Core – (Google Chrome, Microsoft Edge, Opera, Brave, Vivaldi, etc.)
 * Supported > Gecko-Core – (Waterfox, LibreWolf, Mozilla Firefox, etc.)
 
 ## 🔄 Conversion value
