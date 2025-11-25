@@ -6,6 +6,13 @@
 * Quickly add (keys, Ref, Rec, and Scrap) using only the specified values.
 * Check your and the other party's reputation using quick-access buttons to (Rep.tf, backpack.tf, steamhistory.net) on Steam profiles.
 
+
+## 🔄 Trade Safety Center
+* Automatically checks whether the trading partner is listed as a Scammer or TRUSTED.
+* Over 53,000 scammers flagged from Rep.tf | Scrap.tf | Backpack.tf.
+* Over 50 TRUSTED traders verified as safe and highly reliable.
+- 🔗 [You can join the TRUSTED list or report a Scammer here](https://docs.google.com/forms/d/e/1FAIpQLSd_xyoF2RaoDJfa9hMSrV8nJps9qg7jN6GngHSwYNGQ4g5wWw/viewform?usp=header)
+  
 ## 📊 Supported web browsers
 * Supported > Chromium-Core – (Google Chrome, Microsoft Edge, Opera, Brave, Vivaldi, etc.)
 * Supported > Gecko-Core – (Waterfox, LibreWolf, Mozilla Firefox, etc.)
@@ -26,6 +33,12 @@
 * 4.Select the path where you saved it.
 
 ### Demo
+
+* Trade Safety Center:
+
+![11-25 (470-470-a-9)](https://github.com/user-attachments/assets/ac07c18b-6cc1-4373-a1b9-556323ed9498)
+
+
 * Check Steam Profile:
 
 <img width="467" height="167" alt="11-25 (583-583-9-8)" src="https://github.com/user-attachments/assets/1c38c1a4-e7b2-4170-b428-796a1c309e08" />
