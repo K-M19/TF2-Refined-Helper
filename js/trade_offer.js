@@ -11,9 +11,7 @@ function steam_trade_start() {
 		var key_field = "key_field";
 		var ref_field = "ref_field";
 		//list of key ids
-		var key_ids = ["101785959", "339892", "664583249", "11046885", "22989168", "107348033", "62839543", "22989166",
-			"11082610", "780613452", "780611622", "92538037", "780613803", "780612779", "780612279", "80564440", "107348667",
-			"1096191159"];
+		var key_ids = ["101785959"];
 		var ref_id = "2674";
 		var rec_id = "5564";
 		var scrap_id = "2675";
@@ -329,6 +327,4 @@ function steam_trade_start() {
 			}
 		}
 	});
-
-	// injectJS(actualCode); now > runPageCode
 }
