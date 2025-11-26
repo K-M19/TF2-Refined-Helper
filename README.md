@@ -14,8 +14,8 @@
 - 🔗 [You can join the TRUSTED list or report a Scammer here](https://docs.google.com/forms/d/e/1FAIpQLSd_xyoF2RaoDJfa9hMSrV8nJps9qg7jN6GngHSwYNGQ4g5wWw/viewform?usp=header)
 
 # 🗃️ DATABASE
-- 🔗 [TRUSTED](https://furbox.butaa.top/API/Project/TF2-Refined-Helper/scammer.json)
-- 🔗 [Scammers](https://furbox.butaa.top/API/Project/TF2-Refined-Helper/Legit.json)
+- 🔗 [Scammers](https://furbox.butaa.top/API/Project/TF2-Refined-Helper/scammer.json)
+- 🔗 [TRUSTED](https://furbox.butaa.top/API/Project/TF2-Refined-Helper/Legit.json)
   
 ## 📊 Supported web browsers
 * Supported > Chromium-Core – (Google Chrome, Microsoft Edge, Opera, Brave, Vivaldi, etc.)
