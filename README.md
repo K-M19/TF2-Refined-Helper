@@ -14,7 +14,7 @@
 - 🔗 [You can join the TRUSTED list or report a Scammer here](https://github.com/K-M19/TF2-Refined-Helper/blob/main/Trade%20Safety%20Center.md)
 
 # 🗃️ DATABASE
-- 🔗 [Scammers](https://furbox.butaa.top/API/Project/TF2-Refined-Helper/scammer.json)
+- 🔗 [Scammers](https://furbox.butaa.top/API/Project/TF2-Refined-Helper/Scammer.json)
 - 🔗 [TRUSTED](https://furbox.butaa.top/API/Project/TF2-Refined-Helper/Legit.json)
   
 ## 📊 Supported web browsers
