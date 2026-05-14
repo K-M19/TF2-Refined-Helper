@@ -1,5 +1,5 @@
 const VERSION_URL = "https://database.butaa.top/raw/project/git/TF2-Refined-Helper/Vers.json";
-const SCAMMER_LIST_URL = "https://database.butaa.top/raw/project/git/TF2-Refined-Helper/scammer.json"; 
+const SCAMMER_LIST_URL = "https://database.butaa.top/raw/project/git/TF2-Refined-Helper/Scammer.json"; 
 const LEGIT_LIST_URL = "https://database.butaa.top/raw/project/git/TF2-Refined-Helper/Legit.json";
 
 

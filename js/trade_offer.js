@@ -29,6 +29,10 @@ function steam_trade_start() {
 		var KeyRefbtn = "KeyRefbtn";
 		var btn_add = "#" + KeyRefbtn;
 
+		// I hate u steam!
+		// old: div.filter_ctn
+		var div_class = "div.trade_box_contents"
+
 		//So that I don't need to add jQuery everytime
 		function $(code) {
 			return jQuery(code);
@@ -282,7 +286,7 @@ function steam_trade_start() {
 		}
 
 		function init() {
-			$("div.filter_ctn").append(parent_div);
+			$(div_class).append(parent_div);
 			createUI();
 			$("#" + TF2extenUI).hide();
 			doesTF2InvExist(errorCheck);
