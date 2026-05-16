@@ -111,20 +111,20 @@ async function addButtons() {
     injectCustomCSS();
 
     const warningText = "Please consider carefully before every trade transaction, check the partner's reputation before proceeding";
-    
+
     let readyNote = document.querySelector(".tradeoffer_partner_ready_note");
-    let tradeOfferContainer = null; 
+    let tradeOfferContainer = null;
 
     if (readyNote) {
-        readyNote.textContent = warningText; 
+        readyNote.textContent = warningText;
         readyNote.classList.add('custom_trade_warning');
         readyNote.style.display = 'block';
-        
-        tradeOfferContainer = readyNote; 
+
+        tradeOfferContainer = readyNote;
     }
-    
+
     let containers = [
-        document.querySelector("div.header_real_name.ellipsis") 
+        document.querySelector("div.header_real_name.ellipsis")
     ].filter(el => el != null);
 
     if (tradeOfferContainer) {
@@ -135,7 +135,7 @@ async function addButtons() {
         if (container.querySelector(".btn_rep_custom")) return;
 
         if (container.classList.contains('header_real_name')) {
-             container.appendChild(document.createElement("br"));
+            container.appendChild(document.createElement("br"));
         }
 
         Object.values(sites).forEach(site => {

@@ -1,6 +1,6 @@
 // This script runs in the Page World (an environment that is not blocked by the extension’s CSP).
 
-window.addEventListener('message', function(event) {
+window.addEventListener('message', function (event) {
     if (event.source !== window) {
         return;
     }

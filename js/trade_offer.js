@@ -2,7 +2,6 @@ var button_itemUsed = "#" + itemUsed;
 var item_box = ".inventory_item_link";
 var item_history = "tradeoffers/sent/";
 var item_history_list = "div.tradeoffer_items_ctn:not(.inactive) div.tradeoffer_items.primary div.trade_item";
-var border = '<div class="trade_rule selectableNone trade_responsive_hidden"></div>';
 
 
 function steam_trade_start() {
@@ -44,56 +43,69 @@ function steam_trade_start() {
 			$('#' + msgDiv).remove();
 		}
 
+
+		function injectModernStyles() {
+			if (document.getElementById("tf2rh-trade-style")) return;
+			var css = `
+				#${parent_id} { margin-top: 10px; }
+				#${TF2extenUI} { background: linear-gradient(165deg, #1a2735 0%, #22384b 55%, #2b4b62 100%); border:1px solid #4a6a84; border-radius:14px; padding:16px; box-shadow:0 12px 24px rgba(0,0,0,.40); position:relative; overflow:hidden; }
+				#${TF2extenUI}:before { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)); pointer-events:none; }
+				#${TF2extenUI} .tf2rh-title { color:#8fd3ff; font-size:15px; font-weight:800; margin-bottom:12px; letter-spacing:.35px; text-shadow:0 1px 0 rgba(0,0,0,.35); }
+				#${TF2extenUI} .tf2rh-sub { color:#c3d7e8; font-size:11px; margin-top:-8px; margin-bottom:12px; opacity:.9; }
+				#${TF2extenUI} .tf2rh-row { display:flex; gap:10px; align-items:center; margin-bottom:10px; }
+				#${TF2extenUI} .tf2rh-label { min-width:36px; color:#c7d5e0; font-size:12px; font-weight:600; }
+				#${TF2extenUI} .tf2rh-input { width:100%; background:#0f1a24; border:1px solid #3a5268; border-radius:8px; color:#fff; padding:8px 10px; }
+				#${KeyRefbtn} { cursor:pointer; width:100%; text-align:center; border-radius:10px; background:linear-gradient(180deg, #86d957, #5ea32f); padding:10px 0; margin-top:6px; font-weight:800; color:white; border:1px solid #4d8b24; box-shadow:0 6px 14px rgba(45,92,20,.35); transition:transform .12s ease, filter .12s ease; }
+				#${KeyRefbtn}:hover { filter:brightness(1.06); transform:translateY(-1px); }
+				#${msgDiv}, #${TF2extenError}, #${statDiv} { margin-top:8px; border-radius:10px; padding:10px 12px; font-size:12px; line-height:1.45; border:1px solid transparent; }
+				#${msgDiv} { background:#15202b; border-color:#2f4457; color:#c7d5e0; }
+				#${statDiv} { background:#132636; border-color:#2f5e80; color:#c7d5e0; }
+				#${TF2extenError} { background:#35171a; border-color:#7c2930; color:#ffb3b3; }
+			`;
+			var style = document.createElement('style');
+			style.id = 'tf2rh-trade-style';
+			style.textContent = css;
+			document.head.appendChild(style);
+		}
+
 		function createUI() {
+			injectModernStyles();
 			var default_key = getUrlParam("key");
 			default_key = (typeof default_key === 'undefined') ? 0 : default_key;
 			var default_ref = getUrlParam("ref");
 			default_ref = (typeof default_ref === 'undefined') ? 0.00 : default_ref;
 
-			var key_text = '<span class="market_search_sidebar_section_tip_small">Key:</span>';
-			var fieldkey = '<span class="market_search_sidebar_search_box market_search_input_container">\
-                                            <span>\
-                                                <input id=' + key_field + ' class="filter_search_box" type="number" min="0" step="1"\
-                                                autocomplete="off" tabindex="1" value='+ default_key + '>\
-                                            </span>\
-                                        </span>';
-			var ref_text = '<span class="market_search_sidebar_section_tip_small">Ref:</span>';
-			var fieldref = '<span class="market_search_sidebar_search_box market_search_input_container">\
-                                            <span>\
-                                                <input id=' + ref_field + ' class="filter_search_box" type="number" min="0" step="1"\
-                                                autocomplete="off" tabindex="1" value='+ default_ref + '>\
-                                            </span>\
-                                        </span>';
-			var key_ref_btn = '<div class="btn_green_white_innerfade" id=' + KeyRefbtn + ' ><span>Add</span></a>';
-			var total_ui = '<div id=' + TF2extenUI + '>' + border + key_text + fieldkey + ref_text + fieldref + key_ref_btn +
-				'</div>'
+			var total_ui = border + '<div id=' + TF2extenUI + '>' +
+				'<div class="tf2rh-title">TF2 Refined Helper</div>' +
+				'<div class="tf2rh-sub">Quick add keys + metal in one click</div>' +
+				'<div class="tf2rh-row"><span class="tf2rh-label">Key</span><input id=' + key_field + ' class="tf2rh-input" type="number" min="0" step="1" autocomplete="off" tabindex="1" value=' + default_key + '></div>' +
+				'<div class="tf2rh-row"><span class="tf2rh-label">Ref</span><input id=' + ref_field + ' class="tf2rh-input" type="number" min="0" step="1" autocomplete="off" tabindex="1" value=' + default_ref + '></div>' +
+				'<div id=' + KeyRefbtn + '><span>Add items</span></div>' +
+				'</div>';
 			$("#" + parent_id).prepend(total_ui);
 		}
 
 		function showAmount(user, key, ref, rec, scrap) {
 			//console.log("does it work?");
 			clearText(); //clear anything before any sort of message is shown
-			var msg_key = '<div id=' + msgDiv + ' style="color: white;">' + border + '<strong>' + user +
-				' Total | Keys: ' + key + ' | Ref: ' + ref + ' | Rec: ' + rec + ' | Scrap: ' + scrap +
-				' |</strong></div>';
+			var msg_key = '<div id=' + msgDiv + '><strong>' + user + ' Total</strong> | Keys: ' + key + ' • Ref: ' + ref + ' • Rec: ' + rec + ' • Scrap: ' + scrap + '</div>';
 			$("#" + parent_id).prepend(msg_key);
 		}
 
 		function showError(message) {
 			clearText(); //clear anything before any sort of message is shown
-			var errorbox = '<div id=' + TF2extenError + '>' + border + '<span id=' + TF2extenError + ' style="color: red;">' + message + '</span>';
+			var errorbox = '<div id=' + TF2extenError + '>' + message + '</div>';
 			$("#" + parent_id).prepend(errorbox);
 		}
 
 		function showMSG(code) {
 			$('#' + statDiv).remove(); //clear progress/status msg if it exist
-			var msg = '<div id=' + statDiv + '>' + border + '<strong>' + code +
-				'</strong></div>';
+			var msg = '<div id=' + statDiv + '>' + code + '</div>';
 			$("#" + parent_id).append(msg);
 		}
 
 		function showLoading() {
-			var load = '<div style="color: white;"> Loading.....';
+			var load = 'Loading...';
 			showMSG(load);
 		}
 

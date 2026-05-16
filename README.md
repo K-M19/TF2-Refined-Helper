@@ -6,16 +6,6 @@
 * Quickly add (keys, Ref, Rec, and Scrap) using only the specified values.
 * Check your and the other party's reputation using quick-access buttons to (Rep.tf, backpack.tf, steamhistory.net) on Steam profiles.
 
-
-## 🔄 Trade Safety Center
-* Automatically checks whether the trading partner is listed as a Scammer or TRUSTED.
-* Over 53,000 scammers flagged from Rep.tf | Scrap.tf | Backpack.tf.
-* Over 50 TRUSTED traders verified as safe and highly reliable.
-- 🔗 [You can join the TRUSTED list or report a Scammer here](https://github.com/K-M19/TF2-Refined-Helper/blob/main/Trade%20Safety%20Center.md)
-
-# 🗃️ DATABASE
-- 🔗 [Scammers](https://database.butaa.top/raw/project/git/TF2-Refined-Helper/Scammer.json)
-- 🔗 [TRUSTED](https://database.butaa.top/raw/project/git/TF2-Refined-Helper/Legit.json)
   
 ## 📊 Supported web browsers
 * Supported > Chromium-Core – (Google Chrome, Microsoft Edge, Opera, Brave, Vivaldi, etc.)
@@ -36,12 +26,7 @@
 * 3.Click Load unpacked.
 * 4.Select the path where you saved it.
 
-### Demo
-
-* Trade Safety Center:
-
-![11-25 (470-470-a-9)](https://github.com/user-attachments/assets/ac07c18b-6cc1-4373-a1b9-556323ed9498)
-
+### Screenshots
 
 * Check Steam Profile:
 

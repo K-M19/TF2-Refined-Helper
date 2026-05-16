@@ -4,14 +4,13 @@
     'use strict';
 
     const POPUP_DURATION = 10;
-
     const UPDATE_URL = "https://github.com/K-M19/TF2-Refined-Helper";
-    const SETTING_KEY = "TF2RefinedHelper_IgnoreUpdate_Extension";
 
     function getCurrentVersion() {
         if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.getManifest) {
             return chrome.runtime.getManifest().version;
         }
+        return 'unknown';
     }
 
     function isNewerVersion(currentVer, remoteVer) {
@@ -26,90 +25,98 @@
         return false;
     }
 
-
     function showUpdateNotification(remoteVersion) {
         const currentVersion = getCurrentVersion();
 
         const popup = document.createElement('div');
         popup.id = 'tf2rh-update-popup';
-
         popup.style.cssText = `
             position: fixed;
-            top: 20px; 
-            left: 20px; 
-            background-color: #2a475e; 
-            color: #c7d5e0;
-            border: 2px solid #1b2838;
-            border-radius: 8px;
-            padding: 15px;
+            top: 24px;
+            left: 24px;
+            width: min(360px, calc(100vw - 48px));
+            background: linear-gradient(165deg, #1b2b3f 0%, #0f1d30 100%);
+            color: #d6e4f1;
+            border: 1px solid rgba(102, 192, 244, 0.35);
+            border-radius: 14px;
+            padding: 16px;
             z-index: 99999;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            max-width: 300px;
-            font-family: Arial, sans-serif;
-            transition: opacity 0.5s;
-            opacity: 1;
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 220ms ease, transform 220ms ease;
+            backdrop-filter: blur(2px);
         `;
 
-
         popup.innerHTML = `
-            <h3 style="margin-top: 0; margin-bottom: 10px; color: #66c0f4; font-size: 16px;">
-                🚨 Update Warning
-            </h3>
-            <ul style="list-style: none; padding: 0; margin-bottom: 12px; font-size: 13px;">
-                <li style="margin-bottom: 5px;">
-                    Current Version: 
-                    <strong style="color: #FF6961;">${currentVersion} (Outdated)</strong>
-                </li>
-                <li>
-                    Latest Version: 
-                    <strong style="color: #A8D173;">${remoteVersion} (Available)</strong>
-                </li>
-            </ul>
-            
-            <p style="font-size: 11px; margin-bottom: 12px; border-top: 1px solid #1b2838; padding-top: 8px;">
-                Please update your TF2 Refined Helper for the best experience.
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;">
+                <div style="font-size:15px;font-weight:700;color:#66c0f4;letter-spacing:0.2px;">TF2 Refined Helper Update</div>
+                <button id="tf2rh-close-update" style="background:transparent;border:none;color:#7f97ac;font-size:18px;cursor:pointer;line-height:1;padding:0;">×</button>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                <div style="background:rgba(255,255,255,0.04);padding:10px;border-radius:10px;">
+                    <div style="font-size:11px;color:#9bb0c2;text-transform:uppercase;letter-spacing:0.6px;">Current</div>
+                    <div style="font-weight:700;color:#ff8a8a;margin-top:3px;">${currentVersion}</div>
+                </div>
+                <div style="background:rgba(255,255,255,0.04);padding:10px;border-radius:10px;">
+                    <div style="font-size:11px;color:#9bb0c2;text-transform:uppercase;letter-spacing:0.6px;">Latest</div>
+                    <div style="font-weight:700;color:#8be78b;margin-top:3px;">${remoteVersion}</div>
+                </div>
+            </div>
+
+            <p style="margin:0 0 14px;font-size:12px;line-height:1.45;color:#c0cfdb;">
+                New version available. Update now for new fixes and smoother trading experience.
             </p>
-            
-            <a href="${UPDATE_URL}" target="_blank" style="
-                display: block;
-                padding: 10px;
-                background-color: #5AA13B;
-                color: white;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 4px;
-                font-weight: bold;
-                transition: background-color 0.2s;
-            " onmouseover="this.style.backgroundColor='#6FB34C'" onmouseout="this.style.backgroundColor='#5AA13B'">
-                UPDATE NOW
-            </a>
+
+            <a href="${UPDATE_URL}" target="_blank" rel="noopener noreferrer" style="
+                display:block;
+                text-align:center;
+                text-decoration:none;
+                font-weight:700;
+                color:white;
+                background:linear-gradient(90deg,#3aa6e4,#57c0ff);
+                border-radius:10px;
+                padding:10px 12px;
+                box-shadow:0 8px 18px rgba(58,166,228,0.35);
+            ">Update on GitHub</a>
         `;
 
         document.body.appendChild(popup);
+        requestAnimationFrame(() => {
+            popup.style.opacity = 1;
+            popup.style.transform = 'translateY(0)';
+        });
 
+        const closeBtn = popup.querySelector('#tf2rh-close-update');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                popup.style.opacity = 0;
+                popup.style.transform = 'translateY(-8px)';
+                setTimeout(() => popup.remove(), 220);
+            });
+        }
 
         if (POPUP_DURATION > 0) {
-            const timeoutSeconds = POPUP_DURATION * 1000;
             setTimeout(() => {
                 popup.style.opacity = 0;
-                setTimeout(() => popup.remove(), 500);
-            }, timeoutSeconds);
+                popup.style.transform = 'translateY(-8px)';
+                setTimeout(() => popup.remove(), 220);
+            }, POPUP_DURATION * 1000);
         }
     }
 
-
-
     async function checkUpdate() {
         if (typeof chrome === 'undefined' || !chrome.runtime.sendMessage) {
-            console.warn("Chrome Runtime API not available. Skipping update check.");
+            console.warn('Chrome Runtime API not available. Skipping update check.');
             return;
         }
 
         const currentVersion = getCurrentVersion();
 
-
         try {
-            const response = await chrome.runtime.sendMessage({ action: "check_update" });
+            const response = await chrome.runtime.sendMessage({ action: 'check_update' });
 
             if (response && response.success) {
                 const remoteVersion = response.version;
@@ -120,13 +127,12 @@
                     console.log(`TF2 Refined Helper: Running latest version (${currentVersion}).`);
                 }
             } else if (response && response.error) {
-                console.error("TF2 Refined Helper: Error from Background Script:", response.error);
+                console.error('TF2 Refined Helper: Error from Background Script:', response.error);
             }
         } catch (error) {
-            console.error("TF2 Refined Helper: Communication/Extension initialization error:", error);
+            console.error('TF2 Refined Helper: Communication/Extension initialization error:', error);
         }
     }
-
 
     checkUpdate();
 })();

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TF2 Refined Helper",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "A utility that quickly adds keys, Ref, Rec, and Scrap to the trade window and tracks the remaining amounts for both you and the other party.",
   "icons": {
     "128": "images/icon128.png",
@@ -9,8 +9,7 @@
   },
   
   "host_permissions": [
-    "*://steamcommunity.com/*",
-    "https://database.butaa.top/*"
+    "*://steamcommunity.com/*"
   ],
   
   "background": {
@@ -31,7 +30,6 @@
     {
       "js": [
         "js/CheckUpdate.js",
-        "js/CheckScammer.js",
         "js/library/jquery-3.1.0.min.js",
         "js/library/bootstrap.min.js",
         "js/init.js",
