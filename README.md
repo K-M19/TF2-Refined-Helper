@@ -9,7 +9,7 @@
   
 ## 📊 Supported web browsers
 * Supported > Chromium-Core – (Google Chrome, Microsoft Edge, Opera, Brave, Vivaldi, etc.)
-* Supported > Gecko-Core – (Waterfox, LibreWolf, Mozilla Firefox, etc.)
+* ~~Supported > Gecko-Core – (Waterfox, LibreWolf, Mozilla Firefox, etc.)~~
 
 ## 🔄 Conversion value
 - 1 keys > 1 Keys
