@@ -34,5 +34,6 @@
 
 * Quickly add:
   
-![Demo)](https://github.com/user-attachments/assets/a83166fe-fd7c-4629-9656-940e287686b3)
+<img width="407" height="287" alt="05-26 (972-972-j-1)" src="https://github.com/user-attachments/assets/560c82ee-b1af-4845-aacc-f765c826fee9" />
+
 
