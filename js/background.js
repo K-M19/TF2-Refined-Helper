@@ -12,7 +12,7 @@ async function fetchData(url) {
 chrome.runtime.onMessage.addListener(
     (request, sender, sendResponse) => {
         if (request.action === "check_update") {
-            fetchData("https://raw.githubusercontent.com/K-M19/TF2-Refined-Helper/refs/heads/main/js/version.json")
+            fetchData("https://database.butaa.top/raw/project/git/TF2-Refined-Helper/Vers.json")
                 .then(data => sendResponse({ success: true, version: data.version }))
                 .catch(error => sendResponse({ success: false, error: error.message }));
             return true;
